@@ -1,0 +1,258 @@
+/* ==========================
+   RESET
+========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f0f12;
+    color: #fff;
+}
+
+
+/* ==========================
+   MENU
+========================== */
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+    background: rgba(15, 15, 18, .95);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 35px;
+    color: #ff69b4;
+}
+
+.menu ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #ff1493;
+}
+
+
+/* ==========================
+   CAPA PC
+========================== */
+
+header#inicio {
+    height: 700px;
+    background-image: url("IMAGENS/CAPA.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center 80px;
+    background-color: #0f0f12;
+}
+
+.frase-mobile,
+.texto-mobile,
+.perfil-mobile {
+    display: none;
+}
+
+
+/* ==========================
+   SEÇÕES
+========================== */
+
+section {
+    padding: 100px 8%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 35px;
+    color: #ff69b4;
+    margin-bottom: 40px;
+}
+
+
+/* ==========================
+   CARDS
+========================== */
+
+.cartao-sobre,
+.projeto {
+    background: linear-gradient(135deg,
+            rgba(255, 105, 180, .25),
+            rgba(217, 140, 255, .25));
+    border: 1px solid #ff69b4;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(255, 105, 180, .35);
+}
+
+.projetos-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.projeto {
+    width: 300px;
+}
+
+.projeto h3 {
+    color: #ff1493;
+    margin-bottom: 15px; /* Adicionado para espaçamento do título */
+}
+
+/* Estilização da imagem do projeto (Corrigido para funcionar no PC e Celular) */
+.projeto img {
+    width: 100%;
+    height: 180px; /* Define uma altura padrão para os cards ficarem alinhados */
+    object-fit: cover; /* Faz a imagem cortar certinho sem distorcer */
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+/* ==========================
+   CONTATO
+========================== */
+
+.redes a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s; /* Transição suave no hover */
+}
+
+.redes a:hover {
+    background: #ff1493;
+}
+
+
+/* ==========================
+   WHATSAPP (RESOLVIDO)
+========================== */
+.whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    height: 60px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.whatsapp svg {
+    display: block;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+/* ==========================
+   RODAPÉ
+========================== */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: #09090b;
+}
+
+
+/* ==========================
+   CELULAR
+========================== */
+
+@media(max-width:768px) {
+
+    .menu {
+        padding: 0 20px;
+    }
+
+    .menu ul {
+        display: none;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    /* remove somente a imagem da capa no celular */
+    header#inicio {
+        background-image: none;
+        height: auto;
+        padding-top: 100px;
+    }
+
+    /* mostra texto e foto */
+    .frase-mobile,
+    .texto-mobile,
+    .perfil-mobile {
+        display: block;
+    }
+
+    .capa-conteudo {
+        margin-top: 50px; /* Ajustado de 100px para equilibrar o topo */
+        text-align: center;
+    }
+
+    .frase-mobile {
+        color: #ff69b4;
+        font-size: 32px; /* Reduzido de 45px para não quebrar linha em telas pequenas */
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* FOTO PERFIL CELULAR */
+    .perfil-mobile img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 5px solid #ff69b4;
+        margin-top: 30px;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .projeto {
+        width: 100%;
+    }
+}
